@@ -105,9 +105,8 @@ def get_venv_python(venv_path):
         return os.path.join(venv_path, "Scripts", "python.exe")
     return os.path.join(venv_path, "bin", "python")
 
-def piper_install(package_spec, suffix):
+def piper_install(package_spec, unique_name):
     package_name = package_spec.split('==')[0]
-    unique_name = f"{package_name}_{suffix}"
     venv_path = os.path.join(os.getcwd(), 'piper_packages', unique_name)
 
     create_venv(venv_path)
